@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   resources :admins, :only => [:index, :show] do
     resources :reservations
   end
+
+  resources :favorites, only: [:index, :create, :destroy]
   end
