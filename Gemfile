@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.3"
 
+gem "pry-rails"
+
 gem 'dotenv-rails'
 
 gem 'devise'
