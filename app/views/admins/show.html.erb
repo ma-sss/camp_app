@@ -1,0 +1,22 @@
+<h2>キャンプ場詳細</h2>
+
+<table class="table table-primary">
+    <thead>
+        <tr>
+            <th>名前</th>
+            <th>住所</th>
+            <th>電話番号</th>
+        </tr>
+        <tr>
+            <td scope="col"><%= @admin.name %></td>
+            <td scope="col"><%= @admin.address %></td>
+            <td scope="col"><%= @admin.telephone_number %></td>
+        </tr>
+            
+    </thead>
+</table>
+<button type="button" class="btn btn-info my-3 mx-3 ">
+  <%= link_to "キャンプ場予約状況", admin_reservations_path(@admin.id) %>
+</button>
+<%= link_to("topへ戻る", "/") %>
+
