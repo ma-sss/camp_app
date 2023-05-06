@@ -1,0 +1,24 @@
+<div class="col-12 title">
+  <h1>ユーザー予約状況</h1>
+</div>
+<% @reservations.each do |reservation| %>
+    <table class="table table-primary">
+      <thead>
+        <% @admins.each do |admin| %>
+          <% if reservation.admin_id == admin.id %>
+            <tr>
+              <th>予約日</th>
+              <th>キャンプ場</th>
+            </tr>
+            <tr>
+              <td scope="col"><%= link_to reservation.day, admin_reservation_path(reservation.admin_id, reservation.id) %></td>
+              <td scope="col"><%= link_to admin.name, admin_path(admin.id)  %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </thead>
+    </table>
+<% end %>
+<div class="mx-3">
+  <%= link_to("topへ戻る", "/") %>
+</div>

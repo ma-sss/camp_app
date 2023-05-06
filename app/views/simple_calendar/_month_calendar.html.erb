@@ -1,7 +1,7 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
     <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view %>
-    <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
+      <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
     <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view %>
     <% reservations = @admin.reservations.reservations_after_three_month %>
   </div>
@@ -28,19 +28,20 @@
             <% end %>
           <% end %>
         </tr>
-
         <tr>
           <% week.each do |day| %>
             <td>
-              <% if check_reservation(reservations, day) %>
-                  <%= 'x' %>
-                <% else %>
-                  <%= '○' %>
-                <% end %>
+            <% if day <= Date.current || check_reservation(reservations, day) %>
+              <%= 'x' %>
+            <% else %>
+          
+            <%= link_to new_admin_reservation_path(day: day) do %>
+                <%= '○' %>
+            <% end %>
+          <% end %>
             </td>
           <% end %>
         </tr>
-
       <% end %>
     </tbody>
   </table>

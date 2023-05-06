@@ -1,0 +1,32 @@
+<!-- show.html.erb -->
+<div class="container">
+    <div class="row">
+      <div class="col-12 text-center title">
+        <h1>予約詳細画面</h1>
+      </div>
+      <div class="col-12 mt-3 text-center content">
+        <div>
+          <label><strong>日付：</strong></label>
+          <p style="display:inline;"><%= @reservation.day %></p>
+        </div>
+
+    <table class="table table-primary">
+      <thead>
+        <tr>
+          <th>予約日</th>
+          <th>キャンプ場</th>
+        </tr>
+        <tr>
+          <td scope="col"><%= @reservation.day %></td>
+          <td scope="col"><%= link_to @admin.name, admin_path(@admin.id)  %></td>
+        </tr>
+      </thead>
+    </table>
+
+      </div>
+      <div class="col-12 text-center">
+        <%= link_to 'カレンダー画面に戻る', admin_reservations_path(@reservation.admin_id) %>
+        <%= link_to '予約をキャンセル', admin_reservation_path(@reservation.admin_id, @reservation.id), data: { turbo_method: :delete } %>
+      </div>
+    </div>
+  </div>
