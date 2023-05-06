@@ -4,8 +4,6 @@ class CreateReservations < ActiveRecord::Migration[7.0]
       t.date "day", null: false
       t.bigint "admin_id", null: false
       t.bigint "user_id", null: false
-      t.datetime "created_at", precision: 6, null: false
-      t.datetime "updated_at", precision: 6, null: false
       t.datetime "start_time", null: false
       t.timestamps
     end
