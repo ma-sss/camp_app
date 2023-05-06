@@ -1,2 +1,14 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+<% @admins.each do |admin| %>
+    <li class="top_page">
+        <button type="button" class="btn btn-warning my-3">
+            <%= link_to admin.name, admin_path(admin.id) %>
+        </button>
+        <%= "-" %>
+        <button type="button" class="btn btn-info my-3">
+            <%= link_to "キャンプ場予約状況", admin_reservations_path(admin.id) %>
+        </button>
+        <% if current_user %>
+            <%= render 'layouts/button', admin: admin, favorite: @favorite %>
+        <% end %>
+    </li>
+<% end %>
