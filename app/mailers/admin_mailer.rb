@@ -14,7 +14,6 @@ class AdminMailer < ApplicationMailer
         @reservation = params[:reservation]
         @admin = params[:admin]
         @url  = 'http://example.com/login'
-        binding.pry
         mail(to: @admin.email, subject: '予約がキャンセルされました')
     end
 end
