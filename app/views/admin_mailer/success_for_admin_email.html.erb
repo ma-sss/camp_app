@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>いつもcamp.comのご利用ありがとうございます。</h1>
+    <p>
+        以下の通り<%= @user.email %>様より、予約されましたのでご確認よろしくお願いします。
+    </p>
+    <p>・ユーザー名　<%= @user.email %>様</p>
+    <p>・予約日 <%= @reservation.day %></p>
+    <p>・キャンプ場 <%= @admin.name %></p>
+    <p>
+        予約詳細を確認するには、<%= @url %>をクリックしてください。
+    </p>
+  </body>
+</html>
