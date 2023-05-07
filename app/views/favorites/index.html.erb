@@ -1,0 +1,27 @@
+<div class="col-12 text-left title">
+    <h1>お気に入り一覧</h1>
+</div>
+<% @favorites.each do |favorite| %>
+    <% @admins.each do |admin| %>
+        <% if favorite.admin_id == admin.id && favorite.user_id == current_user.id %>
+            <table class="table table-primary">
+                <thead>
+                    <tr>
+                        <th>名前</th>
+                        <th>住所</th>
+                        <th>電話番号</th>
+                    </tr>
+                    <tr>
+                        <td scope="col"><%= link_to admin.name, admin_path(admin.id)  %></td>
+                        <td scope="col"><%= admin.address %></td>
+                        <td scope="col"><%= admin.telephone_number %></td>
+                    </tr>
+                        
+                </thead>
+            </table>
+        <% end %>
+    <% end %>
+<% end %>
+<div class="mx-3">
+  <%= link_to("topへ戻る", "/") %>
+</div>
