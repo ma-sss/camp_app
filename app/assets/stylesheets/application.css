@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ li.top_page{
+    padding-left:15px;
+    list-style:none;
+  }  
