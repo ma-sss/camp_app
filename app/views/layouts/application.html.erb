@@ -42,6 +42,12 @@
 
 
   <body>
+    <% if notice || alert%>
+        <p><%= notice %></p>
+        <p><%= alert %></p>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
