@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.3"
 
+gem 'factory_bot_rails'
+
+gem 'faker'
+
 gem 'rspec-rails'
 
 gem 'rails-i18n', '~> 7.0'
