@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.3"
 
+gem 'rspec-rails'
+
 gem 'rails-i18n', '~> 7.0'
 
 gem 'devise-i18n'
