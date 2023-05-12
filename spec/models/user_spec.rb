@@ -8,16 +8,16 @@ describe User do
         expect(user).to be_valid
     end
 
-    it "passwordがない場合は登録できないこと" do
-        user = User.create(email: "test@example.com", password: nil)
-        user.valid?
-        expect(user.errors[:password]).to include("を入力してください")
-    end
-
     it "emailがない場合は登録できないこと" do
         user = User.create(email: nil, password: "Password123")
         user.valid?
         expect(user.errors[:email]).to include("を入力してください")
+    end
+
+    it "passwordがない場合は登録できないこと" do
+        user = User.create(email: "test@example.com", password: nil)
+        user.valid?
+        expect(user.errors[:password]).to include("を入力してください")
     end
 
     it "emailとpasswordがない場合は登録できないこと" do
