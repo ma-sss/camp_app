@@ -35,7 +35,7 @@ class Reservation < ApplicationRecord
   def date_current_today
     if day.nil?
       errors.add(:day, "は必須項目です")
-    elsif day < (Date.current + 1)
+    elsif day == Date.current
       errors.add(:day, "は当日は選択できません")
     end
   end
