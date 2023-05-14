@@ -2,7 +2,7 @@ require 'rails_helper'
 describe Reservation do
   describe '#create' do
 
-    it "admin,day,admin_id,user_id,start_timeがある場合は登録できること" do
+    it "day,admin_id,user_id,start_timeがある場合は登録できること" do
         admin = Admin.create(email: "test@example.com", password: "Password123", name: "キャンプ場123",
               address: "東京", telephone_number: "090-0000-0000")
         user = User.create(email: "test@example.com", password: "Password123")
