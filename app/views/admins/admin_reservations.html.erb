@@ -1,0 +1,37 @@
+<div class="input-group mb-3">
+  <%= form_with(url: @reservations_path, method: "get") do |form| %>
+    <%= form.label :day, "予約日付検索" %>
+    <%= form.date_field :day %>
+    <%= form.submit "検索", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>予約日付</th>
+      <th>ユーザー名</th>
+      <th>email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @reservations %>
+      <% @reservations.each do |reservation| %>
+          <tr>
+            <td><%= reservation.day %></td>
+            <% user = @users.find(reservation.user_id) %>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+          </tr>
+      <% end %>
+    <% elsif @reservation %>
+        <tr>
+          <td><%= @reservation.day %></td>
+          <% if @reservation.user_id = @user.id %>
+            <td><%= @user.name %></td>
+            <td><%= @user.email %></td>
+          <% end %>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
