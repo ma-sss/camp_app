@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get "/" => "homes#top"
   get "reservations/user_reservations" => "reservations#user_reservations"
+  get "admins/admin_reservations" => "admins#admin_reservations"
   
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
