@@ -8,14 +8,15 @@
 
 5.times do |i|
     Admin.create!(
-        password: "password",
+        password: "Password123",
         name: "キャンプ場#{i}",
-        address: "東京",
-        telephone_number: "000-0000-0000",
-        email: "test#{i}@example.com"
+        address: "東京#{i}",
+        telephone_number: "090-#{i}000-0000",
+        email: "admin_test#{i}@example.com"
     )
     User.create!(
-        password: "password",
-        email: "test#{i}@example.com"
+        name: "user#{i}",
+        password: "Password123",
+        email: "user_test#{i}@example.com"
     )
 end
