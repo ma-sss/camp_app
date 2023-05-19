@@ -15,10 +15,10 @@ class Reservation < ApplicationRecord
       reservation_data
   end
 
-  validates :day, presence: true
+  validates :day, presence: true, uniqueness: true
   validates :admin_id, presence: true
   validates :user_id, presence: true
-  validates :start_time, presence: true
+  validates :start_time, presence: true, uniqueness: true
   validates :admin, presence: true
   validate :date_before_start
   validate :date_current_today
@@ -28,7 +28,7 @@ class Reservation < ApplicationRecord
     if day.nil?
       errors.add(:day, "は必須項目です")
     elsif day < Date.current
-      errors.add(:day, "は過去の日付は選択できません")
+      errors.add(:day, "は過去の日付を選択できません")
     end
   end
 
