@@ -3,21 +3,17 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.3"
 
-gem 'factory_bot_rails'
-
-gem 'faker'
-
-gem 'rspec-rails'
-
 gem 'rails-i18n', '~> 7.0'
 
 gem 'devise-i18n'
 
-gem "pry-rails"
-
 gem 'dotenv-rails'
 
 gem 'devise'
+
+gem "devise_token_auth"
+
+gem "rack-cors"
 
 gem "simple_calendar", "~> 2.0"
 
@@ -69,6 +65,14 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+
+  gem 'factory_bot_rails'
+
+  gem 'faker'
+
+  gem 'rspec-rails'
+
+  gem "pry-rails"
 end
 
 group :development do

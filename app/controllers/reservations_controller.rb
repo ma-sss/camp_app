@@ -30,6 +30,7 @@ class ReservationsController < ApplicationController
             AdminMailer.with(user: @user, reservation: @reservation, admin: @admin).success_for_admin_email.deliver_later
             redirect_to admin_reservation_path(@admin.id, @reservation.id)
         else
+            flash[:alert] = @reservation.errors.full_messages.join(', ')
             render :new
         end
     end
