@@ -17,6 +17,18 @@ class Api::V1::ReservationsController < ApplicationController
       end
   end
 
+  def destroy
+    reservation = Reservation.find(params[:id])
+    admin = Admin.find_by(id: params[:admin_id])
+    user = User.find_by(id: current_api_v1_user.id)
+    UserMailer.with(user: user, reservation: reservation, admin: admin).cancel_for_user_email.deliver_later
+    AdminMailer.with(user: user, reservation: reservation, admin: admin).cancel_for_admin_email.deliver_later
+    if reservation.destroy
+        flash[:notice] = "予約のキャンセルが完了しました"
+        render json: reservation
+    end
+  end
+
   private
 
   def reservation_params

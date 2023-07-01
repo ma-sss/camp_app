@@ -6,25 +6,8 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  namespace :user do
-    resources :sessions, only: %i[index]
-  end
 
-
-  resources :admins, :only => [:index, :show] do
-    resources :reservations
-  end
-
-  namespace :api do
-    namespace :v1 do
-      mount_devise_token_auth_for 'User', at: 'user', controllers: {
-        registrations: 'api/v1/users/registrations'
-      }
-      resources :admins, :only => [:index, :show, :create, :destroy] do
-        resources :reservations
-      end
-    end
-  end
+  
 
   get "/" => "homes#top"
   get "reservations/user_reservations" => "reservations#user_reservations"
@@ -35,6 +18,10 @@ Rails.application.routes.draw do
     passwords:     'admins/passwords',
     registrations: 'admins/registrations'
   }
+
+  resources :admins, :only => [:index, :show] do
+    resources :reservations
+  end
   
   resources :admins, expect: [:index]
   
