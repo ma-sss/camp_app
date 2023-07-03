@@ -1,24 +1,38 @@
-# README
+ CampApp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+キャンプ場予約サイト
 
-Things you may want to cover:
+## 簡単な説明
 
-* Ruby version
+そのままですが、キャンプ場の予約ができるサイトです。
+他にもキャンプ場をお気に入りにする機能やユーザー登録、予約完了、予約キャンセル時に確認メールを送信できます。
 
-* System dependencies
+## 機能
 
-* Configuration
+* ユーザー登録、アドミン登録、ログイン機能(devise) (別ブランチのapi_userでユーザーのapi実装を行いました)
+* キャンプ場予約機能 (simple_calendar)
+* お気に入り機能
 
-* Database creation
+# テスト
+* Rspec 単体テスト(model)
 
-* Database initialization
+## 使い方
 
-* How to run the test suite
+1. 使い方(ユーザー側):  
+基本的なウェブサイトと同じように、サインアップとログイン後（サインインしたら同時にログインされます）予約やお気に入りができるようになります。またログインしなくても
+キャンプ場の予約状況は確認することができます。
 
-* Services (job queues, cache servers, search engines, etc.)
+2. 使い方(アドミン側)
+サインアップとログイン後（サインインしたら同時にログインされます）自身のキャンプ場の予約内容の詳細（予約したユーザーの名前やメールアドレス）を確認することができます。また予約日検索機能あるので、指定した日にちの予約詳細を見ることができます。
 
-* Deployment instructions
+## インストール
 
-* ...
+```
+$ git clone https://github.com/ma-sss/camp_app.git
+$ cd ../camp_app
+```
+
+## 作者
+
+ma_sss  
+mail to: mskk0522@gmail.com
