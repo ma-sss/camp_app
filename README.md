@@ -9,7 +9,8 @@
 
 ## 機能
 
-* ユーザー登録、アドミン登録、ログイン機能(devise) (別ブランチのapi_userでユーザーのapi実装を行いました)
+* ユーザー登録、アドミン登録、ログイン機能(devise)
+* 別ブランチのapi_userでユーザーのapi実装を行いました (devise_token_auth)
 * キャンプ場予約機能 (simple_calendar)
 * お気に入り機能
 * ユーザー登録時、予約完了時、予約キャンセル時に確認メール送信 (action_mailer)
