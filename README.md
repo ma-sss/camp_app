@@ -34,13 +34,6 @@
 ・予約日検索機能
 ![スクリーンショット 2023-07-04 12 45 42](https://github.com/ma-sss/camp_app/assets/120617383/c933f26e-1e00-4044-8ee1-5d2ec865f9bf)
 
-## インストール
-
-```
-$ git clone https://github.com/ma-sss/camp_app.git
-$ cd ../camp_app
-```
-
 ## 作者
 
 ma_sss  
