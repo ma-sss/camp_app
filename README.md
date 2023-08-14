@@ -1,24 +1,45 @@
-# README
+ CampApp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+キャンプ場予約サイト(TOP画面)
 
-Things you may want to cover:
+![スクリーンショット 2023-07-04 12 34 07](https://github.com/ma-sss/camp_app/assets/120617383/29f1142a-a14c-4729-a269-a78d23c208a7)
 
-* Ruby version
+## 簡単な説明
 
-* System dependencies
+そのままですが、キャンプ場の予約ができるサイトです。
+他にもキャンプ場をお気に入りにする機能やユーザー登録、予約完了、予約キャンセル時に確認メールを送信できます。
+  
+## 機能
 
-* Configuration
+* ユーザー登録、アドミン登録、ログイン機能(devise)
+* 別ブランチのapi_userでユーザーのapi実装を行いました (devise_token_auth)
+* キャンプ場予約機能 (simple_calendar)
+  ![スクリーンショット 2023-07-04 12 40 32](https://github.com/ma-sss/camp_app/assets/120617383/24f36415-ad8b-4e01-850c-8e08ab14b41c)
+* お気に入り機能
+  ![スクリーンショット 2023-07-04 12 36 09](https://github.com/ma-sss/camp_app/assets/120617383/59921916-788a-4084-b99a-0dd44d39d1cb)
+* ユーザー登録時、予約完了時、予約キャンセル時に確認メール送信 (action_mailer)
 
-* Database creation
+# テスト
+* Rspec 単体テスト(model)
 
-* Database initialization
+## 使い方
 
-* How to run the test suite
+1. 使い方(ユーザー側):  
+基本的なウェブサイトと同じように、サインアップとログイン後（サインインしたら同時にログインされます）予約やお気に入りができるようになります。またログインしなくても
+キャンプ場の予約状況は確認することができます。
 
-* Services (job queues, cache servers, search engines, etc.)
+2. 使い方(アドミン側)
+サインアップとログイン後（サインインしたら同時にログインされます）自身のキャンプ場の予約内容の詳細（予約したユーザーの名前やメールアドレス）を確認することができます。また予約日検索機能あるので、指定した日にちの予約詳細を見ることができます。
 
-* Deployment instructions
+◎予約日検索機能の説明
+![スクリーンショット 2023-07-04 12 45 42](https://github.com/ma-sss/camp_app/assets/120617383/c933f26e-1e00-4044-8ee1-5d2ec865f9bf)
+①予約日を選択し検索をクリック
+![スクリーンショット 2023-07-04 19 23 54](https://github.com/ma-sss/camp_app/assets/120617383/d143b10d-c366-4598-81dc-f363f3edd18c)
+②選択した予約日の詳細が表示される
+![スクリーンショット 2023-07-04 19 24 12](https://github.com/ma-sss/camp_app/assets/120617383/6884223a-419b-4be6-bd43-a07922aa3ea6)
 
-* ...
+
+## 作者
+
+ma_sss  
+mail to: mskk0522@gmail.com
