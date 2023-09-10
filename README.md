@@ -12,6 +12,7 @@
 ## 機能
 
 * ユーザー登録、アドミン登録、ログイン機能(devise)
+* dockerでコンテナを作成可能
 * 別ブランチのapi_userでユーザーのapi実装を行いました (devise_token_auth)
 * キャンプ場予約機能 (simple_calendar)
   ![スクリーンショット 2023-07-04 12 40 32](https://github.com/ma-sss/camp_app/assets/120617383/24f36415-ad8b-4e01-850c-8e08ab14b41c)
